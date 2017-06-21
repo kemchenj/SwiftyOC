@@ -28,4 +28,10 @@
     // Usage: foreach (s, strings) { ... }
 #define foreach(element, collection) for (typeof((collection).pspdf_enumeratedType) element in (collection))
 
+#if DEBUG
+#define KEYPATH(object, property) ((void)(NO && ((void)object.property, NO)), @ #property)
+#else
+#define KEYPATH(object, property) @ #property
+#endif
+
 #endif /* MagicMacro_pch */
