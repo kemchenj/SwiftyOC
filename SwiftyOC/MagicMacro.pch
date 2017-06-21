@@ -1,0 +1,31 @@
+//
+//  MagicMacro.pch
+//  SwiftyOC
+//
+//  Created by kemchenj on 21/06/2017.
+//  Copyright © 2017 kemchenj. All rights reserved.
+//
+
+#ifndef MagicMacro_pch
+#define MagicMacro_pch
+
+    // Include any system framework and library headers here that should be included in all compilation units.
+    // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#if defined(__cplusplus)
+#define let auto const
+#else
+#define let const __auto_type
+#endif
+
+#if defined(__cplusplus)
+#define var auto
+#else
+#define var __auto_type
+#endif
+
+
+    // Usage: foreach (s, strings) { ... }
+#define foreach(element, collection) for (typeof((collection).pspdf_enumeratedType) element in (collection))
+
+#endif /* MagicMacro_pch */
